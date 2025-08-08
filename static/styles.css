@@ -1,0 +1,159 @@
+body {
+  font-family: sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 850px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#sheet-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+#sheet-buttons button {
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #eee;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#sheet-buttons button.selected {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.piece-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.piece-row input {
+  flex: 1;
+}
+
+.sheet-block {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  margin-bottom: 25px;
+}
+
+.sheet-visual {
+  position: relative;
+  background-color: #f1f1f1;
+  border: 1px dashed #aaa;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.piece-block {
+  position: absolute;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2px;
+  word-break: break-word;
+  text-shadow: 0 0 2px rgba(0,0,0,0.6);
+}
+
+.piece-text {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.edge-label {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 10px;
+  padding: 1px 3px;
+  border-radius: 2px;
+  z-index: 3;
+  color: #fff;
+  pointer-events: none;
+  font-weight: normal;
+}
+
+.top-label {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.left-label {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: left top;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    margin: 10px;
+  }
+
+  .piece-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  #sheet-buttons {
+    flex-direction: column;
+  }
+
+  .piece-block {
+    font-size: 10px;
+  }
+}

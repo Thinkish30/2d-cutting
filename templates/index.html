@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>2D Cutting Stock Optimizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>2D Cutting Stock Optimizer</h1>
+
+    <!-- Sheet Size Selection -->
+    <h3>🪵 Select Available Stock Sizes</h3>
+    <div id="sheet-buttons">
+      <button type="button" onclick="toggleSheet('48x96')">48 x 96</button>
+      <button type="button" onclick="toggleSheet('48x120')">48 x 120</button>
+    </div>
+    <input type="hidden" id="selected-sheets" />
+
+    <hr>
+
+    <!-- Required Pieces -->
+    <label><strong>Required Pieces:</strong></label>
+    <div id="piece-rows">
+      <div class="piece-row">
+        <input class="piece-length" type="number" placeholder="Length (e.g. 24)" />
+        <input class="piece-breadth" type="number" placeholder="Breadth (e.g. 48)" />
+        <input class="piece-qty" type="number" placeholder="Qty (e.g. 5)" />
+      </div>
+    </div>
+    <button type="button" onclick="addPieceRow()">+ Add More</button>
+
+    <button onclick="sendData()">Optimize</button>
+
+    <hr>
+    <div id="output"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
