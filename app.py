@@ -27,7 +27,7 @@ def optimize():
         b = int(p['breadth'])
         q = int(p['quantity'])
         for _ in range(q):
-            original_pieces.append((b, l))  # rectpack expects (width, height)
+            original_pieces.append((b, l))  # rectpack expects (width,height)
 
     if not selected_sheets or not original_pieces:
         return jsonify([])
@@ -76,3 +76,5 @@ def optimize():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
+# end of program
